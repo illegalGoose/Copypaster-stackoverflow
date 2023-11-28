@@ -1,0 +1,27 @@
+{
+    "name": "__MSG_name__",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "default_locale": "en",
+    "description": "__MSG_description__",
+    "icons": {
+        "32": "./icons/Goose.png",
+        "64": "./icons/Goose.png",
+        "128": "./icons/Goose.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://stackoverflow.com/*"],
+            "run_at": "document_idle",
+            "all_frames": false,
+            "js": ["content-script.js"]
+        }
+    ],
+    "host_permissions": ["https://stackoverflow.com/*"],
+    "web_accessible_resources": [
+        {
+            "resources": ["content-script.css", "notification.js"],
+            "matches": ["https://stackoverflow.com/*"]
+        }
+    ]
+}
